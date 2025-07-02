@@ -14,13 +14,13 @@ export default function carousel () {
    <div id="carouselExampleFade" className="carousel slide carousel-fade">
   <div className="carousel-inner">
     <div className="carousel-item active">
-      <img src="images/Sliders/sliders-04.png "alt="sliders 1" width={1920} height={799}/>
+      <img src="/images/Sliders/sliders-04.png "alt="sliders 1" width={1920} height={799}/>
     </div>
     <div className="carousel-item">
-        <img src="images/Sliders/sliders-02.png " alt="slider 2 "width={1920} height={799}/>
+        <img src="/images/Sliders/sliders-02.png " alt="slider 2 "width={1920} height={799}/>
     </div>
     <div className="carousel-item">
-         <img src="images/Sliders/sliders-03.png " alt="slider 3 "width={1920} height={799}/>
+         <img src="/images/Sliders/sliders-03.png " alt="slider 3 "width={1920} height={799}/>
     </div>
   </div>
   <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
