@@ -3,29 +3,35 @@ import Link from 'next/link';
 
 export default function Navigation() {
   return (
-    <nav className="bg-white shadow-md">
-      <ul className="flex justify-center space-x-8 p-4 text-gray-700 font-medium">
-        <li>
-          <Link href="/" className="hover:text-blue-600 transition-colors duration-200">
-            หน้าแรก
-          </Link>
-        </li>
-        <li>
-          <Link href="/about" className="hover:text-blue-600 transition-colors duration-200">
-            เกี่ยวกับเรา
-          </Link>
-        </li>
-        <li>
-          <Link href="/service" className="hover:text-blue-600 transition-colors duration-200">
-            บริการ
-          </Link>
-        </li>
-        <li>
-          <Link href="/contact" className="hover:text-blue-600 transition-colors duration-200">
-            ติดต่อเรา
-          </Link>
-        </li>
-      </ul>
+
+    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+      <div className="container-fluid">
+        <Link className="navbar-brand" href="/">Navbar</Link>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon" />
+        </button>
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <li className="nav-item">
+              <Link className="nav-link active" href="/about">About</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" href="/contact">Contact</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" href="/service">Service</Link>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
   );
 }

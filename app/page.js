@@ -1,14 +1,26 @@
-'use client';
-import Image from "next/image";
+import Card from './components/Card';
+import Carousel from './components/Carousel';
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[auto_1fr_auto] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <div className="min-h-screen p-8 sm:p-20 pb-20 font-[family-name:var(--font-geist-sans)] bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 text-gray-800 dark:text-gray-200">
       
-      {/* ชื่อด้านบน */}
-      <h1 className="text-xl sm:text-2xl font-semibold text-gray-700 dark:text-gray-300">
-        Tanapornpan 035
-      </h1>
+      {/* Carousel Section */}
+      <div className="mb-16 w-full max-w-6xl mx-auto">
+        <Carousel />
+      </div>
+
+      {/* Heading */}
+      <div className="text-center mb-10">
+        <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight">
+          About <span className="text-indigo-500">GAME</span>
+        </h1>
+      </div>
+
+      {/* Cards Section */}
+      <div className="w-full max-w-6xl mx-auto">
+        <Card />
+      </div>
 
     </div>
   );

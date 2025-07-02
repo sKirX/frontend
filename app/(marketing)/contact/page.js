@@ -7,7 +7,7 @@ export default function contact() {
       
       {/* ชื่อด้านบน */}
       <h1 className="text-xl sm:text-2xl font-semibold text-gray-700 dark:text-gray-300">
-        Tanapornpan 035
+        Tanapornpan 035 0842505580
       </h1>
 
     </div>
