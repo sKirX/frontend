@@ -11,19 +11,19 @@ export default function Card() {
     {
       title: 'Little Nightmares 2',
       text: 'This is the content for the first card.',
-      img: '/images/Sliders/sliders-04.png',
+      img: '/images/sliders/sliders-04.png',
       link: '/',
     },
     {
       title: 'Arcane',
       text: 'This is the content for the second card.',
-      img: '/images/Sliders/sliders-02.png',
+      img: '/images/sliders/sliders-02.png',
       link: '/',
     },
     {
       title: 'NieR Automata',
       text: 'This is the content for the third card.',
-      img: '/images/Sliders/sliders-03.png',
+      img: '/images/sliders/sliders-03.png',
       link: '/',
     },
   ];
