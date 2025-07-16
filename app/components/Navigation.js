@@ -3,7 +3,6 @@ import Link from 'next/link';
 
 export default function Navigation() {
   return (
-
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
         <Link className="navbar-brand" href="/">Navbar</Link>
@@ -30,6 +29,13 @@ export default function Navigation() {
               <Link className="nav-link" href="/service">Service</Link>
             </li>
           </ul>
+
+          {/* ปุ่ม Login อยู่ด้านขวาของ navbar */}
+          <div className="d-flex">
+            <Link href="/Login" className="btn btn-outline-primary">
+              Login
+            </Link>
+          </div>
         </div>
       </div>
     </nav>
