@@ -25,6 +25,21 @@ export default function Page() {
     return () => clearInterval(interval);
   }, []);
 
+  const handleDelete = async (id) => {
+    try {
+      const res = await fetch(`http://itdev.cmtc.ac.th:3000/api/users/${id}`, {
+        method: 'DELETE',
+        headers: {
+          Accept: 'application/json',
+        },
+      });
+      const result = await res.json();
+      console.log(result);
+    } catch (error) {
+      console.error('Error deleting user:', error);
+    }
+  };
+
   return (
     <div style={styles.page}>
       <div style={styles.card}>
@@ -36,24 +51,33 @@ export default function Page() {
               <th style={styles.th}>Firstname</th>
               <th style={styles.th}>Fullname</th>
               <th style={styles.th}>Lastname</th>
+              <th style={styles.th}>Username</th>
+            <th style={styles.th}>Address</th>
+            <th style={styles.th}>Sex</th>
+            <th style={styles.th}>Birthday</th>
               <th style={styles.th}>Edit</th>
               <th style={styles.th}>Delete</th>
             </tr>
           </thead>
           <tbody>
             {items.map((item) => (
-              <tr key={item.id} style={styles.tr}>
-                <td style={styles.tdCenter}>{item.id}</td>
-                <td style={styles.td}>{item.firstname}</td>
-                <td style={styles.td}>{item.fullname}</td>
-                <td style={styles.td}>{item.lastname}</td>
+            <tr key={item.id}>
+              <td className='text-center'>{item.id}</td>
+              <td>{item.firstname}</td>
+              <td>{item.fullname}</td>
+              <td>{item.lastname}</td>
+              <td>{item.username}</td>
+              <td>{item.address}</td>
+              <td>{item.sex}</td>
+              <td>{item.birthday}</td>
+              <td><Link href={`/admin/user/edit/${item.id}`} className="btn btn-warning">Edit</Link></td>
                 <td style={styles.td}>
-                  <Link href="#">
-                    <button style={styles.editBtn}>Edit</button>
-                  </Link>
-                </td>
-                <td style={styles.td}>
-                  <button style={styles.delBtn}>Del</button>
+                  <button
+                    style={styles.delBtn}
+                    onClick={() => handleDelete(item.id)}
+                  >
+                    Del
+                  </button>
                 </td>
               </tr>
             ))}
@@ -67,7 +91,7 @@ export default function Page() {
 const styles = {
   page: {
     minHeight: '100vh',
-    backgroundColor: '#0f172a', // สีพื้นเข้ม
+    backgroundColor: '#0f172a',
     color: '#e0f2fe',
     padding: '60px 20px',
     fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
@@ -76,7 +100,7 @@ const styles = {
     alignItems: 'start',
   },
   card: {
-    backgroundColor: '#1e293b', // กล่องฟ้าเทาเข้ม
+    backgroundColor: '#1e293b',
     borderRadius: 16,
     padding: 30,
     width: '100%',

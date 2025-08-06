@@ -10,12 +10,7 @@ export default function Home() {
         <Carousel />
       </div>
 
-      {/* Heading */}
-      <div className="text-center mb-10">
-        <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight">
-          About <span className="text-indigo-500">GAME</span>
-        </h1>
-      </div>
+      
 
       {/* Cards Section */}
       <div className="w-full max-w-6xl mx-auto">

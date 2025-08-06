@@ -14,121 +14,145 @@ export default function Login() {
   };
 
   return (
-    <div style={styles.container}>
-      <h2 style={styles.title}>เข้าสู่ระบบ</h2>
-      <form onSubmit={handleSubmit} style={styles.form}>
-        <label style={styles.label}>Username</label>
-        <input
-          type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          required
-          style={styles.input}
-          placeholder="ใส่ชื่อผู้ใช้"
-        />
+    <div style={styles.page}>
+      <div style={styles.card}>
+        <h2 style={styles.title}>เข้าสู่ระบบ</h2>
+        <form onSubmit={handleSubmit} style={styles.form}>
+          <div>
+            <label style={styles.label}>ชื่อผู้ใช้</label>
+            <input
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+              style={styles.input}
+              placeholder="ชื่อผู้ใช้"
+            />
+          </div>
 
-        <label style={styles.label}>Password</label>
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-          style={styles.input}
-          placeholder="ใส่รหัสผ่าน"
-        />
+          <div>
+            <label style={styles.label}>รหัสผ่าน</label>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              style={styles.input}
+              placeholder="รหัสผ่าน"
+            />
+          </div>
 
-        <label style={styles.checkboxLabel}>
-          <input
-            type="checkbox"
-            checked={rememberMe}
-            onChange={(e) => setRememberMe(e.target.checked)}
-            style={styles.checkbox}
-          />
-          จำฉันไว้
-        </label>
+          <div style={styles.checkboxWrapper}>
+            <input
+              type="checkbox"
+              checked={rememberMe}
+              onChange={(e) => setRememberMe(e.target.checked)}
+              style={styles.checkbox}
+            />
+            <label style={styles.checkboxLabel}>จำฉันไว้</label>
+          </div>
 
-        <button type="submit" style={styles.button}>Login</button>
-      </form>
+          <button type="submit" style={styles.button}>เข้าสู่ระบบ</button>
+        </form>
 
-      <div style={styles.linkContainer}>
-        <a href="/Register" style={styles.link}>สมัครสมาชิก</a> |{' '}
-        <a href="/forgot-password" style={styles.link}>ลืมรหัสผ่าน</a>
+        <div style={styles.linkContainer}>
+          <a href="/Register" style={styles.link}>สมัครสมาชิก</a> |{' '}
+          <a href="/forgot-password" style={styles.link}>ลืมรหัสผ่าน</a>
+        </div>
       </div>
     </div>
   );
 }
 
 const styles = {
-  container: {
-    maxWidth: 360,
-    margin: '3rem auto',
-    padding: '2rem',
-    borderRadius: 12,
-    backgroundColor: '#e0f2f1', // ฟ้าอ่อนสดใส
-    boxShadow: '0 4px 15px rgba(0, 150, 136, 0.4)', // เงาสีเขียว
+  page: {
+    backgroundColor: '#1f2937', // สีเทาเข้มอมฟ้า (Slate Gray)
+    minHeight: '100vh',
+    padding: 20,
     fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
-    color: '#004d40', // เขียวเข้ม
-    textAlign: 'center',
+    color: '#e0e7ff', // สีฟ้าอ่อนอมขาว
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  card: {
+    backgroundColor: '#1e293b',
+    borderRadius: 16,
+    padding: '2.5rem',
+    maxWidth: 400,
+    width: '90%',
+    boxShadow: '0 0 20px rgba(96, 165, 250, 0.5)', // แสงเรือง
+    border: '1px solid #60a5fa',
   },
   title: {
+    color: '#e0f2fe',
+    fontSize: 26,
+    fontWeight: 'bold',
+    textAlign: 'center',
     marginBottom: 24,
-    fontWeight: '700',
-    fontSize: 28,
-    letterSpacing: 2,
   },
   form: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '18px',
+    gap: 20,
   },
   label: {
-    fontWeight: '600',
+    display: 'block',
+    marginBottom: 6,
+    color: '#bae6fd',
+    fontWeight: 600,
     fontSize: 14,
     textAlign: 'left',
   },
   input: {
-    padding: '10px 12px',
+    width: '100%',
+    padding: '12px',
     fontSize: 16,
-    borderRadius: 8,
-    border: '3px solid #00796b', // ขอบเขียวเข้มหนา
+    borderRadius: 10,
+    border: '1px solid #60a5fa',
+    backgroundColor: '#0f172a',
+    color: '#e0f2fe',
     outline: 'none',
-    transition: 'border-color 0.3s ease',
+    transition: '0.3s',
   },
-  checkboxLabel: {
+  checkboxWrapper: {
     display: 'flex',
     alignItems: 'center',
     gap: 10,
-    fontWeight: '600',
-    fontSize: 14,
-    cursor: 'pointer',
-    userSelect: 'none',
-    color: '#00796b',
   },
   checkbox: {
     width: 18,
     height: 18,
+    accentColor: '#60a5fa',
+  },
+  checkboxLabel: {
+    color: '#e0f2fe',
+    fontWeight: 500,
+    fontSize: 14,
+    userSelect: 'none',
     cursor: 'pointer',
   },
   button: {
-    backgroundColor: '#00796b', // เขียวเข้ม
-    color: '#e0f2f1', // ฟ้าอ่อน
+    backgroundColor: '#1e40af',
+    color: '#e0f2fe',
+    padding: '12px',
+    fontSize: 16,
+    fontWeight: 'bold',
     border: 'none',
-    borderRadius: 10,
-    padding: '12px 0',
-    fontSize: 18,
-    fontWeight: '700',
+    borderRadius: 12,
     cursor: 'pointer',
-    boxShadow: '0 6px 8px rgba(0, 121, 107, 0.5)',
-    transition: 'background-color 0.3s ease',
+    boxShadow: '0 0 12px rgba(96, 165, 250, 0.6)', // แสงฟ้าอ่อนเรือง
+    transition: '0.3s',
   },
   linkContainer: {
     marginTop: 20,
+    textAlign: 'center',
     fontSize: 14,
-    color: '#004d40',
+    color: '#94a3b8',
   },
   link: {
-    color: '#00796b',
+    color: '#60a5fa',
     textDecoration: 'none',
-    fontWeight: '600',
+    fontWeight: 600,
   },
 };
